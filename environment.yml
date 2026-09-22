@@ -1,0 +1,23 @@
+name: dataflow-agentmm
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - pip
+  - setuptools
+  - wheel
+  - pip:
+      # DataFlow-AgentMM orchestration/runtime only. Concrete Env packages belong in
+      # envs/environment.yml and are intentionally absent here.
+      - pandas>=2,<3
+      - Pillow>=10,<13
+      - jsonschema>=4.21,<5
+      - openai>=1.50,<3
+      - rich>=13,<16
+      - colorama>=0.4,<1
+      - colorlog>=6,<7
+      - tqdm>=4.66,<5
+variables:
+  DATAFLOW_AGENTMM_ENV_MODE: process
+  DATAFLOW_AGENTMM_ENV_NAME: dataflow-agentmm-envs
+  PYTHONNOUSERSITE: '1'
